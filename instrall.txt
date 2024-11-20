@@ -1,0 +1,15 @@
+pip install flask flask-cors mysql-connector-python
+
+
+CREATE DATABASE sistema_tarefas;
+
+USE sistema_tarefas;
+
+CREATE TABLE tarefas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    descricao TEXT,
+    prioridade ENUM('Baixa', 'Média', 'Alta') DEFAULT 'Baixa',
+    status ENUM('Pendente', 'Concluída') DEFAULT 'Pendente',
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
